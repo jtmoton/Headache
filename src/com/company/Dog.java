@@ -138,7 +138,7 @@ public class Dog {
         myDogs[Dog.getCount()] = tempDog;
         count++;
 
-        /*if (Dog.getMaxID() > myDogs[Dog.getCount()].getId()) {
+       /* if (Dog.getMaxID() > myDogs[Dog.getCount()].getId()) {
             Dog.setMaxID(myDogs[Dog.getCount()].getId());
         }*/
 

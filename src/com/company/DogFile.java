@@ -27,7 +27,7 @@ public class DogFile {
     }
 
     public static void saveAllDogs(Dog[] myDogs)throws IOException{
-        PrintWriter outFile = new PrintWriter(("dogs.txt"));
+        PrintWriter outFile = new PrintWriter("dogs.txt");
 
         for(int i = 1; i < Dog.getCount(); i++) {
             outFile.println(myDogs[i].toString());
