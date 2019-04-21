@@ -7,19 +7,19 @@ public class DogFile {
         Dog[] myDogs = new Dog[200];
         Scanner inFile = new Scanner(new File("dogs.txt"));
 
-        while(inFile.hasNextLine()) {
+        while(inFile.hasNext()) {
             String temp = inFile.nextLine();
             String[] tempArray = temp.split("#");
-            /*myDogs[Dog.getCount()] = new Dog(Integer.parseInt(tempArray[0]),
+            myDogs[Dog.getCount()] = new Dog(Integer.parseInt(tempArray[0]),
                     tempArray[1], tempArray[2], tempArray[3],
-                    Integer.parseInt(tempArray[4]), Integer.parseInt(tempArray[5]), tempArray[6], tempArray[7]);*/
+                    Integer.parseInt(tempArray[4]), Integer.parseInt(tempArray[5]), tempArray[6], tempArray[7]);
 
-            if(tempArray[5].equals("Deleted")) {
+            /*if(tempArray[5].equals("Deleted")) {
                 myDogs[Dog.getCount()] = new Dog(Integer.parseInt(tempArray[0]),
                         tempArray[1], tempArray[2], tempArray[3],
                         Integer.parseInt(tempArray[4]), Integer.parseInt(tempArray[5]), tempArray[6], tempArray[7]);
-            }
-            Dog.setCount((Dog.getCount()) + 1);
+            }*/
+            Dog.setCount(Dog.getCount() + 1);
         }
 
         inFile.close();
@@ -27,12 +27,13 @@ public class DogFile {
     }
 
     public static void saveAllDogs(Dog[] myDogs)throws IOException{
-        PrintWriter outFile = new PrintWriter(new FileWriter("dogs.txt", true));
+        PrintWriter outFile = new PrintWriter(("dogs.txt"));
 
-        for(int i = 0; i < Dog.getCount(); i++) {
-            //outFile.println(myDogs[i].toString());
+        for(int i = 1; i < Dog.getCount(); i++) {
+            outFile.println(myDogs[i].toString());
             System.out.println(myDogs[i].toString());
         }
+
 
         outFile.close();
     }
@@ -41,8 +42,8 @@ public class DogFile {
         PrintWriter outFile = new PrintWriter(new FileWriter("dogs.txt", true));
 
         for(int i = 0; i < Dog.getCount(); i++) {
-            outFile.println(myDogs[i].getWeight() + "#");
-            //System.out.println(myDogs[i].toString());
+            outFile.println(myDogs[i].toString());
+            System.out.println(myDogs[i].toString());
         }
 
         outFile.close();

@@ -135,7 +135,6 @@ public class Dog {
 
         myDogs[Dog.getCount()] = tempDog;
         myDogs[Dog.getCount()].setId(Dog.getCount());
-
         myDogs[Dog.getCount()] = tempDog;
         count++;
 
@@ -214,7 +213,7 @@ public class Dog {
                 System.out.print("Oops! Choose a valid letter to change a part of your dog.");
                 break;
         }
-        DogFile.appendAllDogs(myDogs);
+        DogFile.saveAllDogs(myDogs);
     }
 
     //binary searching the dogs by id
